@@ -2,12 +2,44 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+const localRestaurant = [
+  {
+    name: "Alabama's All American Eatery",
+    image_url:
+      "https://s3-media0.fl.yelpcdn.com/bphoto/TV6kxfeK9_PaMvfCIWtl_g/l.jpg",
+    categories: ["American", "Breakfast & Brunch"],
+    price: "££",
+    reviews: 36,
+    rating: 4,
+  },
+  {
+    name: "Albert's Schloss",
+    image_url:
+      "https://s3-media0.fl.yelpcdn.com/bphoto/SyseOZWILJWbcFvB7vronw/o.jpg",
+    categories: ["Bars", "German", "Czech"],
+    price: "££",
+    reviews: 94,
+    rating: 4.5,
+  },
+  {
+    name: "Gaucho Grill",
+    image_url:
+      "https://s3-media0.fl.yelpcdn.com/bphoto/TC4EZmJgtrls3ohJLRzxbg/l.jpg",
+    categories: ["Bars", "Argentine", "Steakhouse"],
+    price: "££",
+    reviews: 81,
+    rating: 4.5,
+  },
+];
+
 export default function RestaurantItem() {
   return (
-    <View>
-      <RestaurantImage />
-      <RestaurantInfo />
-    </View>
+    <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }}>
+      <View style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}>
+        <RestaurantImage />
+        <RestaurantInfo />
+      </View>
+    </TouchableOpacity>
   );
 }
 
