@@ -8,8 +8,6 @@ import RestaurantItems, {
 import SearchBar from "../components/SearchBar";
 import { yelpApiKey } from "../apiKeys";
 
-const YELP_API_Key = yelpApiKey;
-
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const [city, setCity] = useState("Manchester");
@@ -20,19 +18,13 @@ export default function Home() {
 
     const apiOptions = {
       headers: {
-        Authorization: `Bearer ${YELP_API_Key}`,
+        Authorization: `Bearer ${yelpApiKey}`,
       },
     };
 
     return fetch(yelpUrl, apiOptions)
       .then((res) => res.json())
-      .then((json) =>
-        setRestaurantData(
-          json.businesses.filter((business) =>
-            business.transactions.includes(activeTab.toLowerCase())
-          )
-        )
-      );
+      .then((json) => setRestaurantData(json.businesses));
   };
 
   useEffect(() => {
