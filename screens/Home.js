@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { View, SafeAreaView, ScrollView } from "react-native";
-import Catagories from "../components/Catagories";
-import HeaderTabs from "../components/HeaderTabs";
+import Catagories from "../components/home/Catagories";
+import HeaderTabs from "../components/home/HeaderTabs";
+import BottomTabs from "../components/home/BottomTabs";
 import RestaurantItems, {
   localRestaurants,
-} from "../components/RestaurantItems";
-import SearchBar from "../components/SearchBar";
+} from "../components/home/RestaurantItems";
+import SearchBar from "../components/home/SearchBar";
 import { yelpApiKey } from "../apiKeys";
 import { Divider } from "react-native-elements";
-import BottomTabs from "../components/BottomTabs";
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
